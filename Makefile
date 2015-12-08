@@ -1,6 +1,6 @@
 all : cv.pdf
 
-.PHONY : clean realclean re view
+.PHONY : clean re
 
 cv.dvi :
 	latex cv.tex
@@ -12,14 +12,7 @@ cv.pdf : cv.ps
 	ps2pdf cv.ps
 
 clean :
-	-rm cv.aux cv.log cv.out
-	-rm cv.dvi cv.ps
-	-rm *~
+	-rm cv.{aux,log,out,dvi,ps,pdf} 
+	-rm *~ \#*
 
-realclean : clean
-	-rm cv.pdf
-
-re : realclean cv.pdf
-
-view :
-	xpdf cv.pdf
+re : clean all
