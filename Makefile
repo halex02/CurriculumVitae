@@ -12,7 +12,7 @@ cv.pdf : cv.ps
 	ps2pdf cv.ps
 
 clean :
-	-rm cv.{aux,log,out,dvi,ps,pdf} 
+	-rm cv.aux cv.log cv.out cv.dvi cv.ps cv.pdf 
 	-rm *~ \#*
 
 re : clean all
